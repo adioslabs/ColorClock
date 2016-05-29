@@ -1,5 +1,5 @@
 # ColorClock
-A minimalist, fast-loading, HEX color clock as new tab page. (Google Chrome extension)
+A minimalist, fast-loading Google Chrome extension that shows HEX color code and time as new tab page.
 
 ## Install
 Available at [Chrome Web Store](https://chrome.google.com/webstore/detail/new-tab-color-clock/dfkbogglcileimhledhafjnggcjfkgkj)
