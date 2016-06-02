@@ -14,10 +14,29 @@ function updateTime()
     document.getElementById("hex").innerHTML = "#" + h + m + s;
     document.body.style.backgroundColor = "#" + h + m + s;
 
+    /**
+     * Her 500ms'de bir sync biriminden girdileri cagirir ve uygular.
+     */
+    chrome.storage.sync.get(
+        {
+            "font": "Roboto",
+            "size": 250,
+            "padding": 19
+        }, function (items)
+        {
+            if (!chrome.runtime.error)
+            {
+                document.getElementById("hex").style.fontFamily = items.font;
+                document.getElementById("hex").style.fontSize = items.size + "px";
+                document.getElementById("hex").style.paddingTop = items.padding + "vh";
+            }
+        }
+    );
+
     setTimeout(function ()
     {
         updateTime();
-    }, 1000);
+    }, 500);
 }
 
 document.body.onload = function ()
