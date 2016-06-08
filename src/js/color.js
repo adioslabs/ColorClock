@@ -1,5 +1,5 @@
 /**
- * @author Kutsan Kaplan
+ * @author Kutsan Kaplan <me@kutsankaplan.com>
  *         http://kutsankaplan.com
  *         22/05/16
  */
@@ -12,10 +12,7 @@ function updateTime()
     var s = checkTime(d.getSeconds());
 
     document.getElementById("hex").innerHTML = "#" + h + m + s;
-
-    /**
-     * Her 500ms'de bir sync biriminden girdileri cagirir ve uygular.
-     */
+    
     chrome.storage.sync.get(
         {
             "font": "Roboto",

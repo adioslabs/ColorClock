@@ -1,5 +1,5 @@
 /**
- * @author Kutsan Kaplan
+ * @author Kutsan Kaplan <me@kutsankaplan.com>
  *         http://kutsankaplan.com
  *         02/06/16
  */
@@ -9,10 +9,6 @@ var OPfontSize;
 var OPpaddingTop;
 var OPcustomBgColor;
 
-/**
- * Save butonuna bastiktan sonra kullanicidan alinan input
- * verilerini sync birimine yollar.
- */
 function save_options()
 {
     OPfontSize = document.getElementById("op-font-size").value;
@@ -37,14 +33,10 @@ function save_options()
         });
 }
 
-/**
- * Varsayilan degerleri uygular ve sync birimine yollar.
- */
 function reset_options()
 {
     chrome.storage.sync.set(
         {
-            // Real values
             "font": "Roboto",
             "size": 250,
             "padding": 19,
@@ -60,10 +52,6 @@ function reset_options()
         });
 }
 
-/**
- * Pop-up acildiginda sync biriminden gelen input girdilerini
- * okur ve range-field'lara yazar.
- */
 document.body.onload = function ()
 {
     chrome.storage.sync.get(
