@@ -12,7 +12,6 @@ function updateTime()
     var s = checkTime(d.getSeconds());
 
     document.getElementById("hex").innerHTML = "#" + h + m + s;
-    document.body.style.backgroundColor = "#" + h + m + s;
 
     /**
      * Her 500ms'de bir sync biriminden girdileri cagirir ve uygular.
@@ -21,7 +20,8 @@ function updateTime()
         {
             "font": "Roboto",
             "size": 250,
-            "padding": 19
+            "padding": 19,
+            "custombg": "Default"
         }, function (items)
         {
             if (!chrome.runtime.error)
@@ -29,6 +29,14 @@ function updateTime()
                 document.getElementById("hex").style.fontFamily = items.font;
                 document.getElementById("hex").style.fontSize = items.size + "px";
                 document.getElementById("hex").style.paddingTop = items.padding + "vh";
+
+                if (/([0-9A-F]{6}$)|([0-9A-F]{3}$)/i.test(items.custombg))
+                {
+                    document.body.style.backgroundColor = "#" + items.custombg;
+                } else
+                {
+                    document.body.style.backgroundColor = "#" + h + m + s;
+                }
             }
         }
     );

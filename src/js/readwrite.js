@@ -7,6 +7,7 @@
 var OPfontFamily;
 var OPfontSize;
 var OPpaddingTop;
+var OPcustomBgColor;
 
 /**
  * Save butonuna bastiktan sonra kullanicidan alinan input
@@ -14,19 +15,24 @@ var OPpaddingTop;
  */
 function save_options()
 {
-    // ...
     OPfontSize = document.getElementById("op-font-size").value;
     OPpaddingTop = document.getElementById("op-padding-top").value;
-    OPfontFamily = document.getElementById("op-font-family").value;
+
+    if (document.getElementById("op-font-family").value.length != 0)
+        OPfontFamily = document.getElementById("op-font-family").value;
+
+    if (document.getElementById("op-custom-bg-color").value.length != 0)
+        OPcustomBgColor = document.getElementById("op-custom-bg-color").value.toUpperCase();
 
     chrome.storage.sync.set(
         {
             "font": OPfontFamily,
             "size": OPfontSize,
-            "padding": OPpaddingTop
+            "padding": OPpaddingTop,
+            "custombg": OPcustomBgColor
         }, function ()
         {
-            Materialize.toast('Options saved.', 2000);
+            Materialize.toast('Options saved.', 1500);
         });
 }
 
@@ -40,14 +46,16 @@ function reset_options()
             // Real values
             "font": "Roboto",
             "size": 250,
-            "padding": 19
+            "padding": 19,
+            "custombg": "Default"
         }, function ()
         {
-            // ...
             document.getElementById("op-font-size").value = 250;
             document.getElementById("op-padding-top").value = 19;
             document.getElementById("op-font-family").value = "Roboto";
-            Materialize.toast('Done', 2000);
+            document.getElementById("op-custom-bg-color").value = "Default";
+
+            Materialize.toast('Defaults loaded.', 1500);
         });
 }
 
@@ -61,7 +69,8 @@ document.body.onload = function ()
         {
             "font": "Roboto",
             "size": 250,
-            "padding": 19
+            "padding": 19,
+            "custombg": "Default"
         }, function (items)
         {
             if (!chrome.runtime.error)
@@ -69,6 +78,7 @@ document.body.onload = function ()
                 document.getElementById("op-font-family").value = items.font;
                 document.getElementById("op-font-size").value = items.size;
                 document.getElementById("op-padding-top").value = items.padding;
+                document.getElementById("op-custom-bg-color").value = items.custombg;
             }
         }
     );

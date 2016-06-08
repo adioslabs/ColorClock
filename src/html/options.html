@@ -16,7 +16,7 @@
     {
         font-size: 14px;
         width: 400px;
-        height: 540px;
+        height: 520px;
         color: #212121;
         font-family: Roboto;
         background-color: #F1F1F1;
@@ -30,11 +30,6 @@
         -moz-user-select: none;
         -ms-user-select: none;
         user-select: none;
-    }
-
-    footer
-    {
-        text-align: center;
     }
 
     #material-band
@@ -55,7 +50,8 @@
     /* Top title */
     #title-row, #title-row
     {
-        padding-top: 15px;
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
 
     #title-row, #title-row > span
@@ -82,15 +78,15 @@
         color: #212121;
     }
 
+    #reset-button:hover
+    {
+        color: #9E9E9E;
+    }
+
     /* Email button margin */
     #send-email-button
     {
         margin-right: 10px;
-    }
-
-    #reset-button:hover
-    {
-        color: #9E9E9E;
     }
 
     /* Reset button margin right */
@@ -111,19 +107,19 @@
     }
 
     /* font-family box colors */
-    .input-field input[type=text].valid
+    .input-field input[type=text].valid, .input-field input[type=number].valid
+    {
+        border-bottom: 1px solid #9E9E9E;
+        box-shadow: 0 0 0 0 #9E9E9E;
+    }
+
+    .input-field input[type=text]:focus, .input-field input[type=number]:focus
     {
         border-bottom: 1px solid #9E9E9E;
         box-shadow: 0 1px 0 0 #9E9E9E;
     }
 
-    .input-field input[type=text]:focus
-    {
-        border-bottom: 1px solid #9E9E9E;
-        box-shadow: 0 1px 0 0 #9E9E9E;
-    }
-
-    .input-field input[type=text]:focus + label
+    .input-field input[type=text]:focus + label, .input-field input[type=number]:focus + label
     {
         color: #9E9E9E;
     }
@@ -145,17 +141,26 @@
                     <div id="title-row" class="row center-align">
                         <!--suppress CheckImageSize -->
                         <img src="../icons/48.png" width="24" height="24" class="tooltipped"
-                             data-position="top" data-delay="20" data-tooltip="You are so kawaii">
+                             data-position="top" data-delay="20"
+                             data-tooltip="Never stop learning.">
                         <span class="card-title black-text" id="options-title">Color Clock</span>
                     </div>
 
                     <form>
                         <div class="row">
-                            <div class="input-field col s12">
+                            <div class="input-field col s6">
                                 <input id="op-font-family" type="text" autocomplete="off"
                                        tabindex="-1" value="Roboto"
                                        class="validate">
                                 <label for="op-font-family" class="active">font-family: ?;</label>
+                            </div>
+
+                            <div class="input-field col s6">
+                                <input id="op-custom-bg-color" type="text" autocomplete="off"
+                                       tabindex="-1" value="Default"
+                                       class="validate">
+                                <label for="op-custom-bg-color" class="active">bg-color: #?;
+                                                                               (absolute)</label>
                             </div>
                         </div>
 
@@ -194,10 +199,6 @@
         </div>
     </div>
 </div>
-
-<footer>
-    <small>Kutsan Kaplan</small>
-</footer>
 
 <script src="../js/readwrite.js"></script>
 </body>
