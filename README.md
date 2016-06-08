@@ -9,4 +9,4 @@ Available at [Chrome Web Store](https://chrome.google.com/webstore/detail/new-ta
 ## Screenshots
 ![](http://i.imgur.com/yRvDC74.gif)
 ![](http://i.imgur.com/gaf5Quw.png)
-![](http://i.imgur.com/Mhpnve5.png)
+![](http://i.imgur.com/kwDi3lJ.png)
