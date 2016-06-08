@@ -21,7 +21,8 @@ function save_options()
     if (document.getElementById("op-font-family").value.length != 0)
         OPfontFamily = document.getElementById("op-font-family").value;
 
-    if (document.getElementById("op-custom-bg-color").value.length != 0)
+    if (document.getElementById("op-custom-bg-color").value.length != 0 &&
+        document.getElementById("op-custom-bg-color").value != "Default")
         OPcustomBgColor = document.getElementById("op-custom-bg-color").value.toUpperCase();
 
     chrome.storage.sync.set(
