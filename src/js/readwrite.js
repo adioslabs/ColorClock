@@ -1,13 +1,10 @@
 /**
  * @author Kutsan Kaplan <me@kutsankaplan.com>
  *         http://kutsankaplan.com
- *         02/06/16
+ *         02.06.2016
  */
 
-var OPfontFamily;
-var OPfontSize;
-var OPpaddingTop;
-var OPcustomBgColor;
+var OPfontFamily, OPfontSize, OPpaddingTop, OPcustomBgColor;
 
 function save_options()
 {

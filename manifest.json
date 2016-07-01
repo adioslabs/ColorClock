@@ -4,7 +4,7 @@
   "short_name": "Color Clock",
   "description": "A minimalist, fast-loading, open source, HEX color clock as new tab page.",
   "homepage_url": "https://chrome.google.com/webstore/detail/new-tab-color-clock/dfkbogglcileimhledhafjnggcjfkgkj",
-  "version": "2.2",
+  "version": "2.2.1",
   "icons": {
     "16": "src/icons/16.png",
     "48": "src/icons/48.png",

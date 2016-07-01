@@ -1,7 +1,7 @@
 /**
  * @author Kutsan Kaplan <me@kutsankaplan.com>
  *         http://kutsankaplan.com
- *         22/05/16
+ *         22.05.2016
  */
 
 function updateTime()
